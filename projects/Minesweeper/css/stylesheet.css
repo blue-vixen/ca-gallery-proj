@@ -1,0 +1,181 @@
+
+
+body {background-color: black; 
+    color:white; 
+    text-align: center;
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+footer {
+    font-size: 10px;
+    width: 20%;
+    position: fixed;
+    bottom:0;
+    text-align: left;
+    margin: 10px;   
+    font-family: 'Indie Flower',cursive;
+}
+
+footer:hover {
+    font-size: 14px;
+    text-shadow: 0 0 5px #f3eded, 0 0 15px #f700ff;
+}
+
+table {
+    border-color: white;
+}
+
+
+
+
+h1 {
+    margin:5px;
+    text-shadow: 0 0 5px #f3eded, 0 0 15px #f700ff;
+}
+
+
+ .game-status {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom:10px;
+}
+
+.scoreboard h1 {
+    font-size: 25px;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    
+}
+
+    
+.cell {
+    width:40px;
+     height:40px;
+     text-align: center;
+     color:black;
+}
+
+
+.cell img {width:auto; height:30px}
+
+.game-data {
+    /* width: 200px; */
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    gap: 10px;
+}
+.lives, .hints {
+    font-size:25px;
+    display:flex;
+    align-items: center;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.hints {
+    visibility: hidden;
+}
+
+
+/* .cell:hover,.hints:hover {
+    cursor: pointer;
+} */
+
+.life {
+    margin:2px;
+    color:lightgray;
+}
+
+.difficulty-setting {
+    padding: 10px;
+}
+
+.game-interface {
+    margin: auto;
+}
+
+
+.hidden span {
+    visibility: hidden;
+
+}
+
+
+.cell .hidden:not(span) {
+    visibility: hidden;
+    background-color: rgb(112, 111, 111);
+}
+
+
+.visible {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(107,119,133,1) 100%);
+    /* background-color: rgb(173, 172, 172); */
+}
+
+.cell:not(.visible, .hint-show) {
+    background-color: rgb(112, 111, 111);
+}
+
+
+.hint-show {
+    background-color: rgb(215, 231, 126);
+}
+
+.safe-click {
+    background-color: rgb(204, 125, 211) !important;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+}
+
+.game {
+    display: flex;
+    gap:10px;
+}
+
+button:not(.game-status) {
+    font-size: 1em;
+    width: 80px;
+    height: 80px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+button:not(.game-status):not(.btn-off):hover {
+    background: rgb(219,158,158);
+    background: radial-gradient(circle, rgba(219,158,158,1) 26%, rgba(105,9,121,1) 90%, rgba(58,14,60,1) 100%);
+    cursor: pointer;
+
+}
+
+
+.btn-off {
+    cursor: not-allowed;
+}
+
+.safe-btn span {
+    font-size: 0.7em;
+}

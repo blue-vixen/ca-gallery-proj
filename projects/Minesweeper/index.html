@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Mine Sweeper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body onload="init()">
+    <h1 class="header">Mine Sweeper</h1>
+
+    <div class="difficulty-setting">
+        <input type="radio" id="beginner" name="level" value="beginner" onclick="setLevel(value)">
+        <label for="beginner">Beginner</label>
+        <input type="radio" id="medium" name="level" value="medium" onclick="setLevel(value)">
+        <label for=" medium">Medium</label>
+        <input type="radio" id="expert" name="level" value="expert" onclick="setLevel(value)">
+        <label for="expert">Expert</label>
+    </div>
+    <div class="game-interface">
+        <div class="game-data">
+            <div class="timer">Timer:<br></r><span>0</span></div>
+            <button class="game-status" onclick="restartGame()"> </button>
+            <div class="count">Mines:<br><span></span></div>
+        </div>
+        <div class="game-data">
+            <div class="hints">
+                <span class="hint hint1" onclick="hintClicked(this,1)">💡</span><span class="hint hint2"
+                    onclick="hintClicked(this,2)">💡</span><span class="hint hint3"
+                    onclick="hintClicked(this,3)">💡</span>
+            </div>
+            <div class="lives"><span class="life life1">❤</span><span class="life life2">❤</span><span
+                    class="life life3">❤</span>
+            </div>
+        </div>
+        <div class="game">
+            <div class="btn-container">
+                <button class="safe-btn btn-off" onclick="safeClick()">Safe<br>Click<br><span>0 Left</span></button>
+                <button class="btn-off">Manual<br>Mode</button>
+
+            </div>
+            <table border="1">
+                <tbody class="board"></tbody>
+
+            </table>
+            <div class="btn-container">
+                <button class="btn-off" onclick="undo()">Undo</button>
+                <button class="" onclick="sevenBoomClicked()">7 BOOM!</button>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="scoreboard">
+        <h1>Fastest times:</h1>
+        <div class="scores">
+            <p class="beginner">Beginner<br><span></span></p>
+            <p class="medium">Medium<br><span></span></p>
+            <p class="expert">Expert<br><span></span></p>
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/6a4b98cb80.js" crossorigin="anonymous"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+<footer>Created by Adi Levy-Alalouf &#129418</footer>
+
+</html>
