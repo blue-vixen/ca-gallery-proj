@@ -9,6 +9,7 @@ var gProjects = [
         url: "projects/Minesweeper",
         publishedAt: Date.now(),
         labels: ["Matrixes", "keyboard events"],
+        img: "img/portfolio/minesweeper.png"
     },
     {
         id: "pacman",
@@ -18,6 +19,7 @@ var gProjects = [
         url: "projects/PACMAN UPGRADE",
         publishedAt: Date.now(),
         labels: ["Matrixes", "keyboard events"],
+        img: "img/portfolio/pacman.png"
     },
     {
         id: "ball-board",
@@ -27,5 +29,6 @@ var gProjects = [
         url: "projects/ball-board",
         publishedAt: Date.now(),
         labels: ["Matrixes", "keyboard events"],
+        img: "img/portfolio/ball-board.png"
     },
 ]
