@@ -7,7 +7,7 @@ var gProjects = [
         title: "Watch your step!",
         desc: "lorem ipsum lorem ipsum lorem ipsum",
         url: "projects/Minesweeper",
-        publishedAt: Date.now(),
+        publishedAt: formatted_date(),
         labels: ["Matrixes", "keyboard events"],
         img: "img/portfolio/minesweeper.png"
     },
@@ -17,7 +17,7 @@ var gProjects = [
         title: "Oldie but goldie",
         desc: "lorem ipsum lorem ipsum lorem ipsum",
         url: "projects/PACMAN UPGRADE",
-        publishedAt: Date.now(),
+        publishedAt: formatted_date(),
         labels: ["Matrixes", "keyboard events"],
         img: "img/portfolio/pacman.png"
     },
@@ -27,7 +27,7 @@ var gProjects = [
         title: "Get those balls!",
         desc: "lorem ipsum lorem ipsum lorem ipsum",
         url: "projects/ball-board",
-        publishedAt: Date.now(),
+        publishedAt: formatted_date(),
         labels: ["Matrixes", "keyboard events"],
         img: "img/portfolio/ball-board.png"
     },
@@ -37,4 +37,11 @@ var gProjects = [
 function getProjectById(projId) {
     return gProjects.find(proj => projId === proj.id);
 
+}
+
+function formatted_date() {
+    var result = "";
+    var d = new Date();
+    result += d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear()
+    return result;
 }

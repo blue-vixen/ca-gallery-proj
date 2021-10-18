@@ -37,7 +37,8 @@ function renderModal(projId) {
   <ul class="list-inline">
     <li>Date: ${clickedProj.publishedAt}</li>
   </ul> 
-  <a class="btn btn-primary" href="${clickedProj.url}" target="_blank">Check it out!</a>
+  <a class="btn btn-primary" href="${clickedProj.url}" target="_blank"><i class="fa fa-play"></i>
+  Check it out!</a>
   <button class="btn btn-primary" data-dismiss="modal" type="button">
   <i class="fa fa-times"></i>
   Close Project</button>`
@@ -47,6 +48,11 @@ function renderModal(projId) {
 function getProjects() {
   return gProjects;
 }
-{/* <button class="btn btn-primary" data-dismiss="modal" type="button" onclick="window.open('${clickedProj.url}', "_blank")">
-<i class="fa fa-times"></i>
-Check it out!</button> */}
+
+
+function onSubmitForm() {
+  var elEmail = $('.contact-email').val();
+  var elSubj = $('.contact-subj').val();
+  var elMsg = $('.contact-msg').val();
+  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${elEmail}&su=${elSubj}&body=${elMsg}`);
+}
