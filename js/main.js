@@ -3,15 +3,15 @@
 $(document).ready(init);
 
 function init() {
-    console.log('Starting up');
-    renderGallery();
+  console.log('Starting up');
+  renderGallery();
 }
 
 function renderGallery() {
-    var projects = getProjects();
-    var strHtmls = projects.map(function (proj) {
-        return `<div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+  var projects = getProjects();
+  var strHtmls = projects.map(function (proj) {
+    return `<div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" onclick="renderModal('${proj.id}')" href="#portfolioModal1">
       <div class="portfolio-hover">
       <div class="portfolio-hover-content">
       <i class="fa fa-plus fa-3x"></i>
@@ -24,11 +24,29 @@ function renderGallery() {
       <p class="text-muted">${proj.title}</p>
       </div>
       </div>`
-    });
-    $('.gallery').html(strHtmls);
+  });
+  $('.gallery').html(strHtmls);
 }
 
+function renderModal(projId) {
+  var clickedProj = getProjectById(projId);
+  var strHtmls = `<h2>${clickedProj.name}</h2>
+  <p class="item-intro text-muted">${clickedProj.title}</p>
+  <img class="img-fluid d-block mx-auto" src="img/portfolio/${clickedProj.id}.png" alt="">
+  <p>${clickedProj.desc}</p>
+  <ul class="list-inline">
+    <li>Date: ${clickedProj.publishedAt}</li>
+  </ul> 
+  <a class="btn btn-primary" href="${clickedProj.url}" target="_blank">Check it out!</a>
+  <button class="btn btn-primary" data-dismiss="modal" type="button">
+  <i class="fa fa-times"></i>
+  Close Project</button>`
+  $('.modal-body').html(strHtmls);
+}
 
 function getProjects() {
-    return gProjects;
+  return gProjects;
 }
+{/* <button class="btn btn-primary" data-dismiss="modal" type="button" onclick="window.open('${clickedProj.url}', "_blank")">
+<i class="fa fa-times"></i>
+Check it out!</button> */}

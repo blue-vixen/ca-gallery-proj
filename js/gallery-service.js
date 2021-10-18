@@ -32,3 +32,9 @@ var gProjects = [
         img: "img/portfolio/ball-board.png"
     },
 ]
+
+
+function getProjectById(projId) {
+    return gProjects.find(proj => projId === proj.id);
+
+}
